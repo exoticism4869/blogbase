@@ -6,20 +6,6 @@
 					<router-link class="header" :to="{ name: 'Home' }"
 						>FireBlogs</router-link
 					>
-					<ul>
-						<li>
-							<a href="#"><youTube class="svg-icon" /></a>
-						</li>
-						<li>
-							<a href="#"><twitter class="svg-icon" /></a>
-						</li>
-						<li>
-							<a href="#"><instagram class="svg-icon" /></a>
-						</li>
-						<li>
-							<a href="#"><linkedin class="svg-icon" /></a>
-						</li>
-					</ul>
 				</div>
 				<div class="col-2">
 					<ul>
@@ -27,7 +13,7 @@
 						<router-link class="link" :to="{ name: 'Blogs' }"
 							>Blogs</router-link
 						>
-						<router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }"
+						<router-link v-if="!user" class="link" :to="{ name: 'CreatePost' }"
 							>Create Post</router-link
 						>
 						<router-link v-if="!user" class="link" :to="{ name: 'Login' }"
@@ -44,7 +30,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+	computed: {
+		user() {
+			return this.$store.state.user
+		}
+	}
+}
 </script>
 
 <style lang="scss" scoped>

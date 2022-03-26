@@ -6,8 +6,8 @@
 			<div class="container">
 				<h2>never miss a post. Register for your free account today!</h2>
 				<router-link class="router-button" :to="{ name: 'Register' }"
-					>Register for blogbase<Arrow class="arrow arrow-light"
-				/></router-link>
+					>Register for blogbase
+				</router-link>
 			</div>
 		</div>
 	</div>

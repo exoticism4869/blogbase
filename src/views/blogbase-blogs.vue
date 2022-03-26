@@ -20,9 +20,6 @@ export default {
 			return this.$store.state.ownPost.value
 		}
 	}
-	// beforeUnmount() {
-	// 	this.$store.commit('toggleEditPost', false)
-	// }
 }
 </script>
 
