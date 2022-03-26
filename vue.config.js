@@ -2,7 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
 	transpileDependencies: true,
 	productionSourceMap: false,
-	publicPath: '/',
+	publicPath: './',
 	outputDir: 'docs',
 	configureWebpack: (config) => {
 		//调试JS
