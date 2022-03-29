@@ -1,13 +1,5 @@
 <template>
 	<div class="blog-card">
-		<div class="icons">
-			<div @click="editBlog" class="icon">
-				<inline-svg src="../assets/Icons/edit-regular.svg" class="edit" />
-			</div>
-			<div @click="deletePost" class="icon">
-				<inline-svg src="../assets/Icons/trash-regular.svg" class="delete" />
-			</div>
-		</div>
 		<img :src="require('../assets/blogPhotos/beautiful-stories.jpg')" alt="" />
 		<div class="info">
 			<h4>{{ post.blogTitle }}</h4>

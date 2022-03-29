@@ -5,6 +5,7 @@ import Register from '../views/blogbase-register.vue'
 import Blogs from '../views/blogbase-blogs.vue'
 import CreatePost from '../views/blogbase-create-post.vue'
 import ViewBlog from '../views/blogbase-viewblog.vue'
+import vuex from '../store/index.js'
 
 const routes = [
 	{
@@ -62,9 +63,17 @@ const router = createRouter({
 	routes
 })
 
-router.beforeEach((to, from, next) => {
+// eslint-disable-next-line no-unused-vars
+router.beforeEach((to, from) => {
+	if (to.name === 'CreatePost' || to.name === 'Blogs') {
+		if (!vuex.state.user) {
+			document.title = `${to.meta.title} | FireBlog`
+			return {
+				name: 'Login'
+			}
+		}
+	}
 	document.title = `${to.meta.title} | FireBlog`
-	next()
 })
 
 export default router
